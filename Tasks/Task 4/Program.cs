@@ -26,7 +26,7 @@ namespace Task_4
             num1 *= 3;
 
             Console.WriteLine("Ответ: "+Convert.ToString(num1, 2));
-
+            Console.WriteLine("Нажмите любую клавишу для выхода...");
             Console.ReadKey();
         }
     }

@@ -11,13 +11,10 @@ namespace Task_3
     {
         static void Main(string[] args)
         {
-            while (true)
-            {
-                double a = ConsoleFuncs.CheckedDoubleInput("Введите число a: ");
-                Console.WriteLine("F(a) = {0}", F(a));
-                Console.WriteLine("Нажмите любую клавишу для нового ввода...");
-                Console.ReadKey();
-            }
+            double a = ConsoleFuncs.CheckedDoubleInput("Введите число a: ");
+            double result = F(a);
+            Console.WriteLine("F(a) = {0}", result);
+            Console.ReadKey();
         }
 
         static double F(double x)

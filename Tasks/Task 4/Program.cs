@@ -13,19 +13,22 @@ namespace Task_4
         {
             int N = ConsoleFuncs.CheckedIntegerInput("Введите N: ", ">=0");
 
-            string num = "";
+            string numstr = "";
 
             for (int i = 0; i < N; i++)
             {
-                num = ConsoleFuncs.EnterNumberInRange("Введите a" + i + ": ", 0, 2).ToString() + num;
+                numstr = ConsoleFuncs.EnterNumberInRange("Введите a" + i + ": ", 0, 2).ToString() + numstr;
             }
-            num = 1 + num;
 
-            int num1 = Convert.ToInt32(num, 2);
+            // an не вводится с клавиатуры так как он должен быть равен 1 всегда
+            numstr = 1 + numstr;
 
-            num1 *= 3;
+            // Перевод из двоичной системы в десятичную
+            int p = Convert.ToInt32(numstr, 2);
 
-            Console.WriteLine("Ответ: "+Convert.ToString(num1, 2));
+            p *= 3;
+
+            Console.WriteLine("Ответ: "+Convert.ToString(p, 2));
             Console.WriteLine("Нажмите любую клавишу для выхода...");
             Console.ReadKey();
         }

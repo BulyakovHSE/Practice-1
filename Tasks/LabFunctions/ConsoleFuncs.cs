@@ -10,13 +10,14 @@ namespace LabFunctions
     {
         public static int EnterNumberInRange(string outputMessage, int low, int hight)
         {
-            int num;
+            int num, StartPosition = Console.CursorTop;
             do
             {
                 num = CheckedIntegerInput(outputMessage);
                 if (!(num >= low && num < hight))
                     Console.WriteLine("Введите число из диапозона от " + low + " до " + hight + "!");
             } while (!(num >= low && num < hight));
+            DeleteRows(StartPosition);
             return num;
         }
 
@@ -211,6 +212,19 @@ namespace LabFunctions
                     if (!input || Number < 0)
                     {
                         Console.WriteLine("Введите целое положительное число!");
+                        input = false;
+                    }
+                } while (!input);
+            }
+            else if (type == ">0")
+            {
+                do
+                {
+                    Console.Write(OutputMessage);
+                    input = Int32.TryParse(Console.ReadLine(), out Number);
+                    if (!input || Number < 0)
+                    {
+                        Console.WriteLine("Введите целое число больше нуля!");
                         input = false;
                     }
                 } while (!input);

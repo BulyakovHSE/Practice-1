@@ -12,6 +12,8 @@ namespace Task_5
         static void Main(string[] args)
         {
             int n = ConsoleFuncs.CheckedIntegerInput("Введите n: ", "=>0");
+
+            // Инициализация и заполнение матрицы случайными значениями
             double[][] matr = new double[n][];
             Random rand = new Random();
             for (int i = 0; i < n; i++)
@@ -23,6 +25,7 @@ namespace Task_5
                 }
             }
 
+            // Сохранение максимальных значений строк матрицы
             double[] maxValues = new double[n];
 
             for (int i = 0; i < n; i++)
@@ -30,12 +33,15 @@ namespace Task_5
                 maxValues[i] = matr[i].Max();
             }
 
+            // Вычисление суммы
             double summ = 0;
 
             for (int i = 0, j = n - 1; i < n; i++, j--)
             {
                 summ += maxValues[i] * maxValues[j];
             }
+
+            // Вывод матрицы и результата
             Console.WriteLine("Матрица: ");
             foreach (double[] line in matr)
             {
